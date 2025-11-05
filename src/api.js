@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Configure axios instance for API calls with base URL
 const api = axios.create({
-  baseURL: "/api", // Vercel handles proxying to backend
+  baseURL: import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/api` : "/api",
 });
 
 // Add authorization token to all requests if available
